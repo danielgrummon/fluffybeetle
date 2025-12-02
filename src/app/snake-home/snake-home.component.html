@@ -1,0 +1,47 @@
+@if (!showGame()) {
+<div class="home-container">
+    <button class="back-button" (click)="goBackToArcade()">← BACK TO ARCADE</button>
+    <div class="home-content">
+        <div class="logo">
+            <div class="snake-icon">🐍</div>
+        </div>
+        <h1 class="title">SNAKE GAME</h1>
+        <p class="subtitle">Classic arcade game reimagined</p>
+
+        <button class="play-button" (click)="startSnakeGame()">
+            <span class="button-text">PLAY GAME</span>
+            <span class="button-icon">▶</span>
+        </button>
+
+        <div class="features">
+            <div class="feature">
+                <span class="feature-icon">🎮</span>
+                <span class="feature-text">Classic Gameplay</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🔊</span>
+                <span class="feature-text">Sound Effects</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🏆</span>
+                <span class="feature-text">High Scores</span>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>How to Play</h3>
+            <div class="instruction-item">
+                <span class="key">Arrow Keys</span> or <span class="key">WASD</span> - Move
+            </div>
+            <div class="instruction-item">
+                <span class="key">Space</span> or <span class="key">P</span> - Pause
+            </div>
+        </div>
+    </div>
+</div>
+} @else {
+<app-snake-game></app-snake-game>
+<button class="back-button" (click)="backToHome()">
+    <span>← Back to Menu</span>
+</button>
+}

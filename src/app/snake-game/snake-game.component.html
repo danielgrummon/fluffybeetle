@@ -1,0 +1,69 @@
+<div class="game-container">
+    <div class="game-board" [style.width.px]="gridWidth()" [style.height.px]="gridHeight()">
+
+        <!-- Snake segments -->
+        @for (segment of getSnakeSegments(); track $index) {
+        <div class="snake-segment" [class.snake-head]="$index === 0" [style.left.px]="segment.x * getGridSize()"
+            [style.top.px]="segment.y * getGridSize()" [style.width.px]="getGridSize()"
+            [style.height.px]="getGridSize()">
+        </div>
+        }
+
+        <!-- Apple -->
+        <div class="apple" [style.left.px]="getApple().x * getGridSize()" [style.top.px]="getApple().y * getGridSize()"
+            [style.width.px]="getGridSize()" [style.height.px]="getGridSize()">
+            🍎
+        </div>
+
+        <!-- Overlay messages -->
+        @if (gameState() === GameState.READY) {
+        <div class="overlay">
+            <div class="message">
+                <h1>SNAKE GAME</h1>
+                <p>Use Arrow Keys or WASD to move</p>
+                <p>Press SPACE or ENTER to start</p>
+                <p>Press P to pause during game</p>
+                @if (highScore() > 0) {
+                <p class="high-score">High Score: {{ highScore() }}</p>
+                }
+            </div>
+        </div>
+        }
+
+        @if (gameState() === GameState.PAUSED) {
+        <div class="overlay">
+            <div class="message">
+                <h1>PAUSED</h1>
+                <p>Press SPACE or P to resume</p>
+                <p>Score: {{ score() }}</p>
+            </div>
+        </div>
+        }
+
+        @if (gameState() === GameState.GAME_OVER) {
+        <div class="overlay">
+            <div class="message">
+                <h1>GAME OVER</h1>
+                <p>Score: {{ score() }}</p>
+                @if (score() === highScore() && score() > 0) {
+                <p class="new-high-score">🏆 NEW HIGH SCORE! 🏆</p>
+                }
+                @if (highScore() > 0) {
+                <p class="high-score">High Score: {{ highScore() }}</p>
+                }
+                <p>Press SPACE or ENTER to play again</p>
+            </div>
+        </div>
+        }
+    </div>
+
+    <!-- Score display during gameplay -->
+    @if (gameState() === GameState.PLAYING) {
+    <div class="score-display">
+        <div class="score-item">Score: {{ score() }}</div>
+        @if (highScore() > 0) {
+        <div class="score-item">High Score: {{ highScore() }}</div>
+        }
+    </div>
+    }
+</div>

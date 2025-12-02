@@ -1,0 +1,76 @@
+/* Self-contained styles - no global dependencies needed */
+:host {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+}
+
+canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    cursor: crosshair;
+    margin: 0;
+    padding: 0;
+}
+
+.instructions {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #FFFFFF;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 15px;
+    border: 2px solid #FFFFFF;
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+.instructions p {
+    margin: 5px 0;
+}
+
+.instructions p:first-child {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    background: linear-gradient(180deg, #00ff00 0%, #00cc00 100%);
+    border: 2px solid #00ff00;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.back-button:hover {
+    background: linear-gradient(180deg, #00ff00 0%, #00ff00 100%);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+    transform: scale(1.05);
+}
+
+.back-button:active {
+    transform: scale(0.95);
+}

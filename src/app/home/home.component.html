@@ -1,0 +1,45 @@
+<div class="home-container">
+    @if (!selectedGame()) {
+    <div class="main-menu">
+        <h1 class="arcade-title">ARCADE GAMES</h1>
+        <div class="game-list">
+            <button class="game-button" (click)="selectGame('alien-invaders')">
+                <span class="game-icon">👾</span>
+                <span class="game-name">ALIEN INVADERS</span>
+            </button>
+            <button class="game-button" (click)="selectGame('bustout')">
+                <span class="game-icon">🧱</span>
+                <span class="game-name">BUSTOUT</span>
+            </button>
+            <button class="game-button" (click)="selectGame('hopper')">
+                <span class="game-icon">🐸</span>
+                <span class="game-name">HOPPER</span>
+            </button>
+            <button class="game-button" (click)="selectGame('snake')">
+                <span class="game-icon">🐍</span>
+                <span class="game-name">SNAKE</span>
+            </button>
+            <button class="game-button" (click)="selectGame('space-rocks')">
+                <span class="game-icon">🪨</span>
+                <span class="game-name">SPACE ROCKS</span>
+            </button>
+        </div>
+        <div class="footer">
+            <p>SELECT A GAME TO START</p>
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2005 Daniel Grummon</p>
+        </div>
+    </div>
+    } @else if (selectedGame() === 'alien-invaders') {
+    <app-invaders-home (backToArcade)="backToMenu()"></app-invaders-home>
+    } @else if (selectedGame() === 'bustout') {
+    <app-bustout-home (backToArcade)="backToMenu()"></app-bustout-home>
+    } @else if (selectedGame() === 'hopper') {
+    <app-hopper-home (backToArcade)="backToMenu()"></app-hopper-home>
+    } @else if (selectedGame() === 'snake') {
+    <app-snake-home (backToArcade)="backToMenu()"></app-snake-home>
+    } @else if (selectedGame() === 'space-rocks') {
+    <app-space-rocks-home (backToArcade)="backToMenu()"></app-space-rocks-home>
+    }
+</div>

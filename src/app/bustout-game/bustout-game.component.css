@@ -1,0 +1,40 @@
+/* Self-contained styles for Super Bustout Game component */
+
+/* Host element styles to make component truly full-screen */
+:host {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+/* Reset styles for the component */
+:host * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bustoutCanvas {
+    display: block;
+    background-color: #000;
+    cursor: none;
+}

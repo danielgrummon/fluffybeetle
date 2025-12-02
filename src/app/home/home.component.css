@@ -1,0 +1,135 @@
+/* Self-contained main home component styles */
+:host {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #000000;
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.arcade-title {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ff00ff;
+    text-align: center;
+    letter-spacing: 8px;
+    text-shadow: 0 0 20px #ff00ff;
+    margin: 0;
+    animation: arcadeGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes arcadeGlow {
+    from {
+        text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    }
+
+    to {
+        text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+    }
+}
+
+.game-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.game-button {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    background: linear-gradient(180deg, #00ffff 0%, #00cccc 100%);
+    border: 3px solid #00ffff;
+    padding: 12px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.game-button:hover {
+    background: linear-gradient(180deg, #00ffff 0%, #00ffff 100%);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.9);
+    transform: scale(1.05);
+}
+
+.game-button:active {
+    transform: scale(0.98);
+}
+
+.game-icon {
+    font-size: 32px;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.8));
+}
+
+.game-name {
+    flex: 1;
+    text-align: left;
+}
+
+.footer {
+    text-align: center;
+    color: #00ffff;
+    margin-top: 10px;
+}
+
+.footer p {
+    font-size: 14px;
+    letter-spacing: 2px;
+    animation: blink 1.5s ease-in-out infinite;
+}
+
+.copyright {
+    text-align: center;
+    color: #888;
+    margin-top: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+@keyframes blink {
+
+    0%,
+    49% {
+        opacity: 1;
+    }
+
+    50%,
+    100% {
+        opacity: 0.3;
+    }
+}

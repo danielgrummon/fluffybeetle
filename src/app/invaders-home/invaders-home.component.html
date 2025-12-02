@@ -1,0 +1,20 @@
+<div class="home-container">
+    @if (!gameStarted()) {
+    <button class="back-button" (click)="goBackToArcade()">← BACK TO ARCADE</button>
+    <div class="home-screen">
+        <h1 class="game-title">ALIEN INVADERS</h1>
+        <div class="menu">
+            <button class="start-button" (click)="startGame()">START GAME</button>
+            <div class="instructions">
+                <h2>HOW TO PLAY</h2>
+                <p>← → Arrow keys to move</p>
+                <p>SPACEBAR to shoot</p>
+                <p>Destroy all aliens to advance!</p>
+            </div>
+        </div>
+    </div>
+    } @else {
+    <app-alien-invaders></app-alien-invaders>
+    <button class="exit-button" (click)="exitGame()">EXIT TO MENU</button>
+    }
+</div>

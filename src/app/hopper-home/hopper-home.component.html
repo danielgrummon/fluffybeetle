@@ -1,0 +1,27 @@
+<div class="home-container">
+    @if (!gameStarted()) {
+    <button class="back-button" (click)="goBackToArcade()">← BACK TO ARCADE</button>
+    <div class="title-section">
+        <h1 class="game-title">HOPPER</h1>
+        <p class="subtitle">A CLASSIC ARCADE ADVENTURE</p>
+    </div>
+
+    <div class="button-section">
+        <button class="start-button" (click)="startGame()">
+            START GAME
+        </button>
+    </div>
+
+    <div class="instructions">
+        <h2>HOW TO PLAY</h2>
+        <p>↑ ↓ ← → or WASD to move</p>
+        <p>Get to all 5 goals at the top!</p>
+        <p>Avoid cars, snakes, and alligators</p>
+        <p>Ride logs and turtles across the water</p>
+        <p>Catch the pink frog for bonus points!</p>
+    </div>
+    } @else {
+    <app-hopper></app-hopper>
+    <button class="exit-button" (click)="exitGame()">EXIT TO MENU</button>
+    }
+</div>

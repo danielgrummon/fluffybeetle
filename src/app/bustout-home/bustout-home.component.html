@@ -1,0 +1,38 @@
+<div class="home-container">
+    @if (!gameStarted()) {
+    <button class="back-button" (click)="goBackToArcade()">← BACK TO ARCADE</button>
+    <div class="title-section">
+        <h1 class="game-title">SUPER BUSTOUT</h1>
+        <p class="subtitle">Classic Arcade Action</p>
+    </div>
+
+    <button class="start-button" (click)="startGame()">
+        START GAME
+    </button>
+
+    <div class="instructions">
+        <h2>HOW TO PLAY</h2>
+        <ul>
+            <li>Use <span class="key">Arrow Keys</span> or <span class="key">A/D</span> to move paddle</li>
+            <li>Use <span class="key">Mouse</span> to control paddle position</li>
+            <li>Press <span class="key">SPACE</span> to launch ball</li>
+            <li>Break all bricks to advance levels</li>
+            <li>Don't let the ball fall!</li>
+        </ul>
+    </div>
+
+    <div class="game-info">
+        <div class="info-item">
+            <span class="label">Lives:</span>
+            <span class="value">5</span>
+        </div>
+        <div class="info-item">
+            <span class="label">Starting Level:</span>
+            <span class="value">1</span>
+        </div>
+    </div>
+    } @else {
+    <app-bustout-game></app-bustout-game>
+    <button class="exit-button" (click)="exitGame()">EXIT TO MENU</button>
+    }
+</div>

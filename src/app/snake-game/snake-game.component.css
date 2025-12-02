@@ -1,0 +1,226 @@
+/* Styles from app.css and styles.css for self-contained component */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:host {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.game-container {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-board {
+    position: relative;
+    background: #0f3460;
+    border: none;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.snake-segment {
+    position: absolute;
+    background: linear-gradient(135deg, #00ff87 0%, #60efff 100%);
+    border: 1px solid #00d9ff;
+    border-radius: 2px;
+    box-shadow: 0 0 5px rgba(0, 255, 135, 0.5),
+        inset 0 0 3px rgba(255, 255, 255, 0.3);
+    transition: all 0.05s ease;
+}
+
+.snake-head {
+    background: linear-gradient(135deg, #60efff 0%, #00ff87 100%);
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8),
+        inset 0 0 5px rgba(255, 255, 255, 0.5);
+    z-index: 10;
+}
+
+.apple {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    animation: pulse 0.5s ease-in-out infinite alternate;
+    z-index: 5;
+    filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.6));
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 52, 96, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.message {
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.message h1 {
+    font-size: 4rem;
+    margin: 0 0 30px 0;
+    color: #00ffff;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8),
+        0 0 40px rgba(0, 255, 255, 0.5);
+    letter-spacing: 8px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 20px rgba(0, 255, 255, 0.8),
+            0 0 40px rgba(0, 255, 255, 0.5);
+    }
+
+    to {
+        text-shadow: 0 0 25px rgba(0, 255, 255, 1),
+            0 0 50px rgba(0, 255, 255, 0.7),
+            0 0 70px rgba(0, 255, 255, 0.5);
+    }
+}
+
+.message p {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #60efff;
+}
+
+.high-score {
+    color: #ffd700 !important;
+    font-weight: bold;
+    font-size: 1.8rem !important;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+.new-high-score {
+    color: #ff6b6b !important;
+    font-weight: bold;
+    font-size: 2rem !important;
+    animation: celebrate 0.5s ease-in-out infinite alternate;
+    text-shadow: 0 0 15px rgba(255, 107, 107, 0.8);
+}
+
+@keyframes celebrate {
+    from {
+        transform: scale(1) rotate(-2deg);
+    }
+
+    to {
+        transform: scale(1.05) rotate(2deg);
+    }
+}
+
+.score-display {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(15, 52, 96, 0.9);
+    padding: 15px 25px;
+    border-radius: 10px;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    z-index: 50;
+}
+
+.score-item {
+    font-family: 'Courier New', monospace;
+    font-size: 1.5rem;
+    color: #00ffff;
+    margin: 5px 0;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .message h1 {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+    }
+
+    .message p {
+        font-size: 1rem;
+    }
+
+    .high-score {
+        font-size: 1.3rem !important;
+    }
+
+    .new-high-score {
+        font-size: 1.5rem !important;
+    }
+
+    .score-display {
+        top: 10px;
+        right: 10px;
+        padding: 10px 15px;
+    }
+
+    .score-item {
+        font-size: 1rem;
+    }
+}
+
+/* Retro scanline effect (optional, for authentic TI calculator feel) */
+.game-board::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg,
+            rgba(0, 0, 0, 0.1) 0px,
+            rgba(0, 0, 0, 0.1) 1px,
+            transparent 1px,
+            transparent 2px);
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.3;
+}

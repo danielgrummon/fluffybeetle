@@ -1,0 +1,43 @@
+@if (!showGame()) {
+<div class="home-container">
+    <button class="back-button" (click)="goBackToArcade()">← BACK TO ARCADE</button>
+    <div class="home-content">
+        <h1 class="game-title">SPACE ROCKS</h1>
+        <p class="game-subtitle">Classic Arcade Game</p>
+
+        <button class="start-button" (click)="startGame()">
+            START GAME
+        </button>
+
+        <div class="controls-info">
+            <h2>CONTROLS</h2>
+            <div class="control-item">
+                <span class="key">↑ / W</span>
+                <span class="action">Thrust</span>
+            </div>
+            <div class="control-item">
+                <span class="key">← / A</span>
+                <span class="action">Rotate Left</span>
+            </div>
+            <div class="control-item">
+                <span class="key">→ / D</span>
+                <span class="action">Rotate Right</span>
+            </div>
+            <div class="control-item">
+                <span class="key">SPACE</span>
+                <span class="action">Fire</span>
+            </div>
+            <div class="control-item">
+                <span class="key">P</span>
+                <span class="action">Pause</span>
+            </div>
+            <div class="control-item">
+                <span class="key">ESC</span>
+                <span class="action">Exit to Menu</span>
+            </div>
+        </div>
+    </div>
+</div>
+} @else {
+<app-space-rocks-game (exitGame)="exitGame()"></app-space-rocks-game>
+}

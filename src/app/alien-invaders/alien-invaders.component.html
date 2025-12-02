@@ -1,0 +1,36 @@
+<div class="game-container">
+    <div class="sidebar">
+        <div class="score-panel">
+            <div class="score-item">
+                <span class="label">SCORE</span>
+                <span class="value">{{ score() }}</span>
+            </div>
+            <div class="score-item">
+                <span class="label">LIVES</span>
+                <span class="value">{{ lives() }}</span>
+            </div>
+            <div class="score-item">
+                <span class="label">LEVEL</span>
+                <span class="value">{{ level() }}</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            @if (!gameOver() && !paused()) {
+            <button class="game-button" (click)="togglePause()">Pause</button>
+            }
+
+            @if (paused()) {
+            <button class="game-button" (click)="togglePause()">Resume</button>
+            }
+
+            @if (gameOver()) {
+            <button class="game-button restart" (click)="restart()">Restart Game</button>
+            }
+        </div>
+    </div>
+
+    <div class="game-wrapper">
+        <canvas id="gameCanvas"></canvas>
+    </div>
+</div>

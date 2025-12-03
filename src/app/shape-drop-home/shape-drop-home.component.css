@@ -1,0 +1,202 @@
+/* Self-contained component styles */
+:host {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, #1a0033 0%, #000000 100%);
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 40px;
+    padding: 20px;
+}
+
+.game-title {
+    font-size: 72px;
+    font-weight: bold;
+    color: #ff00ff;
+    text-align: center;
+    letter-spacing: 12px;
+    text-shadow: 0 0 30px #ff00ff, 0 0 60px #ff00ff;
+    margin: 0;
+    animation: titlePulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes titlePulse {
+    from {
+        transform: scale(1);
+        text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+    }
+
+    to {
+        transform: scale(1.05);
+        text-shadow: 0 0 30px #ff00ff, 0 0 60px #ff00ff, 0 0 80px #ff00ff;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.start-button {
+    font-family: 'Courier New', monospace;
+    font-size: 32px;
+    font-weight: bold;
+    color: #000000;
+    background: linear-gradient(180deg, #00ff00 0%, #00cc00 100%);
+    border: 4px solid #00ff00;
+    padding: 20px 60px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.6);
+    animation: buttonGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes buttonGlow {
+    from {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+    }
+
+    to {
+        box-shadow: 0 0 40px rgba(0, 255, 0, 0.8);
+    }
+}
+
+.start-button:hover {
+    background: linear-gradient(180deg, #00ff00 0%, #00ff00 100%);
+    transform: scale(1.1);
+    box-shadow: 0 0 50px rgba(0, 255, 0, 1);
+}
+
+.start-button:active {
+    transform: scale(1.05);
+}
+
+.instructions {
+    background: rgba(0, 0, 0, 0.7);
+    border: 3px solid #00ffff;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.instructions h2 {
+    color: #00ffff;
+    font-size: 24px;
+    margin: 0 0 20px 0;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.instructions p {
+    color: #ffffff;
+    font-size: 18px;
+    margin: 10px 0;
+    letter-spacing: 1px;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #00ffff;
+    padding: 12px 24px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.back-button:hover {
+    background: rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+    transform: translateX(-5px);
+}
+
+.exit-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background: rgba(255, 0, 0, 0.7);
+    border: 2px solid #ff0000;
+    padding: 12px 24px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.exit-button:hover {
+    background: rgba(255, 0, 0, 0.9);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+    transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .game-title {
+        font-size: 48px;
+        letter-spacing: 6px;
+    }
+
+    .start-button {
+        font-size: 24px;
+        padding: 15px 40px;
+    }
+
+    .instructions {
+        padding: 20px;
+    }
+
+    .instructions h2 {
+        font-size: 20px;
+    }
+
+    .instructions p {
+        font-size: 16px;
+    }
+
+    .back-button,
+    .exit-button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}

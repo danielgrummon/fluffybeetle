@@ -5,11 +5,12 @@ import { BustoutHomeComponent } from '../bustout-home/bustout-home.component';
 import { HopperHomeComponent } from '../hopper-home/hopper-home.component';
 import { SnakeHomeComponent } from '../snake-home/snake-home.component';
 import { SpaceRocksHomeComponent } from '../space-rocks-home/space-rocks-home.component';
+import { ShapeDropHomeComponent } from '../shape-drop-home/shape-drop-home.component';
 
 @Component({
     selector: 'app-home',
     standalone: true,
-    imports: [CommonModule, InvadersHomeComponent, BustoutHomeComponent, HopperHomeComponent, SnakeHomeComponent, SpaceRocksHomeComponent],
+    imports: [CommonModule, InvadersHomeComponent, BustoutHomeComponent, HopperHomeComponent, SnakeHomeComponent, SpaceRocksHomeComponent, ShapeDropHomeComponent],
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css']
 })

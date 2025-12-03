@@ -23,12 +23,16 @@
                 <span class="game-icon">🪨</span>
                 <span class="game-name">SPACE ROCKS</span>
             </button>
+            <button class="game-button" (click)="selectGame('shape-drop')">
+                <span class="game-icon">🟦</span>
+                <span class="game-name">SHAPE DROP</span>
+            </button>
         </div>
         <div class="footer">
             <p>SELECT A GAME TO START</p>
         </div>
         <div class="copyright">
-            <p>Copyright © 2005 Daniel Grummon</p>
+            <p>Copyright © 2025 Daniel Grummon</p>
         </div>
     </div>
     } @else if (selectedGame() === 'alien-invaders') {
@@ -41,5 +45,7 @@
     <app-snake-home (backToArcade)="backToMenu()"></app-snake-home>
     } @else if (selectedGame() === 'space-rocks') {
     <app-space-rocks-home (backToArcade)="backToMenu()"></app-space-rocks-home>
+    } @else if (selectedGame() === 'shape-drop') {
+    <app-shape-drop-home (backToArcade)="backToMenu()"></app-shape-drop-home>
     }
 </div>
